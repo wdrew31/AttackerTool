@@ -1,0 +1,92 @@
+{
+  "scan_id": "49ffd604-c5ec-4b04-a7de-4797ca33d486",
+  "target_url": "http://localhost:5001/",
+  "status": "completed",
+  "progress": 100,
+  "start_time": "2025-10-16T19:41:46.015001",
+  "end_time": "2025-10-16T19:41:46.090356",
+  "pages_crawled": 4,
+  "input_points_found": 3,
+  "vulnerabilities_found": 3,
+  "vulnerabilities": [
+    {
+      "type": "SQL Injection",
+      "subtype": "Error-Based",
+      "severity": "Critical",
+      "url": "http://localhost:5001/login",
+      "method": "POST",
+      "parameter": "username",
+      "payload": "')",
+      "evidence": "ype=\"password\" name=\"password\" placeholder=\"Password\" required> <button type=\"submit\">Login</button> </form> <div class=\"result\"><span class='error'>Database Error: near \")\": syntax error</span></div> <p><a href=\"/\">\u2190 Back to Home</a></p> </body> </html>",
+      "description": "SQL error messages exposed, indicating SQL injection vulnerability",
+      "cvss_score": 9.8,
+      "cwe": "CWE-89",
+      "owasp": "A03:2021 - Injection",
+      "remediation": {
+        "summary": "Use parameterized queries (prepared statements)",
+        "steps": [
+          "Replace string concatenation with parameterized queries",
+          "Use ORM frameworks that handle parameterization automatically",
+          "Validate and sanitize all user inputs",
+          "Apply principle of least privilege to database accounts",
+          "Implement proper error handling to avoid exposing database errors"
+        ]
+      }
+    },
+    {
+      "type": "SQL Injection",
+      "subtype": "Error-Based",
+      "severity": "Critical",
+      "url": "http://localhost:5001/search",
+      "method": "GET",
+      "parameter": "q",
+      "payload": "')",
+      "evidence": "q\" placeholder=\"Search by username...\" value=\"&#39;)\"> <button type=\"submit\">Search</button> </form> <div class=\"result\" style=\"color: #d32f2f;\">Error: near &#34;)&#34;: syntax error</div> <p><a href=\"/\">\u2190 Back to Home</a></p> </body> </html>",
+      "description": "SQL error messages exposed, indicating SQL injection vulnerability",
+      "cvss_score": 9.8,
+      "cwe": "CWE-89",
+      "owasp": "A03:2021 - Injection",
+      "remediation": {
+        "summary": "Use parameterized queries (prepared statements)",
+        "steps": [
+          "Replace string concatenation with parameterized queries",
+          "Use ORM frameworks that handle parameterization automatically",
+          "Validate and sanitize all user inputs",
+          "Apply principle of least privilege to database accounts",
+          "Implement proper error handling to avoid exposing database errors"
+        ]
+      }
+    },
+    {
+      "type": "SQL Injection",
+      "subtype": "Error-Based",
+      "severity": "Critical",
+      "url": "http://localhost:5001/profile",
+      "method": "GET",
+      "parameter": "id",
+      "payload": "' OR '1'='1",
+      "evidence": "d; color: #666; } a { color: #2196F3; } </style> </head> <body> <h2>\ud83d\udc64 User Profile (Vulnerable)</h2> <div class=\"profile\" style=\"color: #d32f2f;\">Error: near &#34;1&#34;: syntax error</div> <p><a href=\"/\">\u2190 Back to Home</a></p> </body> </html>",
+      "description": "SQL error messages exposed, indicating SQL injection vulnerability",
+      "cvss_score": 9.8,
+      "cwe": "CWE-89",
+      "owasp": "A03:2021 - Injection",
+      "remediation": {
+        "summary": "Use parameterized queries (prepared statements)",
+        "steps": [
+          "Replace string concatenation with parameterized queries",
+          "Use ORM frameworks that handle parameterization automatically",
+          "Validate and sanitize all user inputs",
+          "Apply principle of least privilege to database accounts",
+          "Implement proper error handling to avoid exposing database errors"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "critical": 3,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "info": 0
+  }
+}

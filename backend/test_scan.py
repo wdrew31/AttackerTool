@@ -174,11 +174,17 @@ def main():
     
     # Example target URLs (replace with your test target)
     # For testing, use DVWA: docker run -d -p 80:80 vulnerables/web-dvwa
-    TARGET_URL = input("Enter target URL (e.g., http://localhost): ").strip()
+    TARGET_URL = input("Enter target URL (e.g., http://localhost:5000): ").strip()
     
     if not TARGET_URL:
-        print("No target URL provided. Using example: http://localhost")
-        TARGET_URL = "http://localhost"
+        print("No target URL provided. Using example: http://localhost:5000")
+        TARGET_URL = "http://localhost:5000"
+    
+    # Add http:// if missing
+    if not TARGET_URL.startswith(('http://', 'https://')):
+        print(f"⚠️  Adding http:// prefix to URL")
+        TARGET_URL = f"http://{TARGET_URL}"
+        print(f"   Using: {TARGET_URL}")
     
     # Confirm before scanning
     print(f"\n⚠️  WARNING: This will perform security testing on {TARGET_URL}")
