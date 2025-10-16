@@ -1,0 +1,47 @@
+ I'm concerned about the vulnerability of code built by AI and I'm looking to create a tool to test different parts of the code that we created and see if there's any weak spots or any room for hackers to breach the code
+
+
+
+
+ To better understand the scope and requirements for your security testing tool, I'd like to clarify a few key aspects:
+
+1. __Target Languages/Frameworks__: What programming languages and frameworks do you want this tool to analyze? (e.g., Python, JavaScript/Node.js, Java, etc.)  
+
+Answer: Python
+
+2. __Vulnerability Types__: What types of security vulnerabilities are you most concerned about? (e.g., SQL injection, XSS, authentication flaws, API security, data exposure, etc.)
+
+Answer: I think I want a wrapper app for multiple types of security testing including all of the ones you listed
+
+3. __Tool Interface__: How do you envision interacting with this tool?
+
+   - CLI application you run from terminal
+   - IDE extension/plugin (VSCode, etc.)
+   - Web-based dashboard
+   - CI/CD integration
+
+   Answer: web based dashboard
+
+4. __Analysis Scope__: What should the tool analyze?
+
+   - Individual code files
+   - Entire projects/repositories
+   - Specific functions or modules
+   - AI-generated code specifically (with prompts/metadata)
+
+   Answer: I want it to run as a simulated user that has access over the web and can't see the code
+
+5. __Output/Reporting__: What kind of results do you want?
+
+   - Simple pass/fail with vulnerability counts
+   - Detailed reports with severity ratings
+   - Remediation suggestions or automated fixes
+   - Integration with security standards (OWASP Top 10, CWE, etc.)
+
+   Answer: Detailed reports with severity ratings and Remediation suggestions or automated fixes
+
+6. __Technical Background__: What's your comfort level with security testing tools and concepts? This will help me design appropriate features and complexity.
+
+Please share your thoughts on these points, or let me know if you have specific priorities among them.
+
+Answer: beginner 
